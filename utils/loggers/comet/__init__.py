@@ -243,7 +243,7 @@ class CometLogger:
 
     def check_dataset(self, data_file):
         """Validates the dataset configuration by loading the YAML file specified in `data_file`."""
-        with open(data_file) as f:
+        with open(data_file, encoding = 'utf-8') as f:
             data_config = yaml.safe_load(f)
 
         path = data_config.get("path")
