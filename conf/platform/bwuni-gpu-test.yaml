@@ -1,0 +1,27 @@
+# @package _global_
+
+defaults:
+  - override /hydra/launcher: submitit_slurm
+  - _self_
+
+hydra:
+  mode: MULTIRUN  # needed for launcher to be used
+  launcher:
+    # launcher/cluster specific options
+    partition: "dev_gpu_4_a100"
+    #partition: "gpu_8"
+    #timeout_min: 2880 # in minutes    
+    timeout_min: 30 # in minutes
+    gres: gpu:2
+    mem_per_gpu: 94000  # in MB
+    # exclude: node[4-5]  # e.g. do not allocate on these nodes because the RTX2080 doesn't have enough VRAM
+    additional_parameters:
+      cpus-per-task: 4  # maybe more?
+      output: /home/kit/anthropomatik/lk7828/yolo/yolov5/experiments/outputs/tb-%job-name.out
+      error: /home/kit/anthropomatik/lk7828/yolo/yolov5/experiments/outputs/error-%job-name.out
+
+
+  # disable logging from job to stdout, as this pollutes slurm output
+  job_logging:
+    root:
+      handlers: [file]

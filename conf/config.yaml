@@ -1,0 +1,10 @@
+hydra:
+  mode: RUN
+  sweep:
+    dir: ./sweep_dir
+    
+
+defaults:
+  #- model: 3lv_900e
+  - platform: bwuni-gpu-4
+  #- platform: local

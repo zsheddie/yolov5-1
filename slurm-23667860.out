@@ -1,0 +1,38 @@
+[34m[1mdetect_cluster: [0mweights=v5l_30e.pt, source=data/videos, data=data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=, view_img=False, save_txt=False, save_csv=False, save_conf=False, save_crop=False, nosave=False, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=runs/detect, name=exp, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1
+YOLOv5 🚀 v7.0-317-g79af44ec Python-3.10.14 torch-2.3.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+
+Traceback (most recent call last):
+  File "/pfs/data5/home/kit/anthropomatik/lk7828/yolo/yolov5/yolov5-1/detect_cluster.py", line 314, in <module>
+    main(opt)
+  File "/pfs/data5/home/kit/anthropomatik/lk7828/yolo/yolov5/yolov5-1/detect_cluster.py", line 309, in main
+    run(**vars(opt))
+  File "/home/kit/anthropomatik/lk7828/.conda/envs/yolo/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/pfs/data5/home/kit/anthropomatik/lk7828/yolo/yolov5/yolov5-1/detect_cluster.py", line 114, in run
+    model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)
+  File "/pfs/data5/home/kit/anthropomatik/lk7828/yolo/yolov5/yolov5-1/models/common.py", line 467, in __init__
+    model = attempt_load(weights if isinstance(weights, list) else w, device=device, inplace=True, fuse=fuse)
+  File "/pfs/data5/home/kit/anthropomatik/lk7828/yolo/yolov5/yolov5-1/models/experimental.py", line 98, in attempt_load
+    ckpt = torch.load(attempt_download(w), map_location="cpu")  # load
+  File "/home/kit/anthropomatik/lk7828/.conda/envs/yolo/lib/python3.10/site-packages/torch/serialization.py", line 997, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/kit/anthropomatik/lk7828/.conda/envs/yolo/lib/python3.10/site-packages/torch/serialization.py", line 444, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/kit/anthropomatik/lk7828/.conda/envs/yolo/lib/python3.10/site-packages/torch/serialization.py", line 425, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'v5l_30e.pt'
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n901
+Job ID: 23667860
+Cluster: uc2
+User/Group: lk7828/anthropomatik
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:00:05
+CPU Efficiency: 1.45% of 00:05:44 core-walltime
+Job Wall-clock time: 00:01:26
+Memory Utilized: 484.59 MB
+Memory Efficiency: 0.38% of 124.51 GB

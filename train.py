@@ -99,6 +99,7 @@ RANK = int(os.getenv("RANK", -1))
 WORLD_SIZE = int(os.getenv("WORLD_SIZE", 1))
 GIT_INFO = check_git_info()
 
+# @hydra.main(config_path='conf',config_name="config")
 
 def train(hyp, opt, device, callbacks):
     """

@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "train.py", line 21, in <module>
+    import hydra
+ModuleNotFoundError: No module named 'hydra'
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n901
+Job ID: 23667134
+Cluster: uc2
+User/Group: lk7828/anthropomatik
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:01:40 core-walltime
+Job Wall-clock time: 00:00:25
+Memory Utilized: 2.78 MB
+Memory Efficiency: 0.00% of 124.51 GB
